@@ -9,7 +9,7 @@
       margin: 0;
       height: 100vh;
       background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      font-family: Arial, sans-serif;
+      font-family: "Trebuchet MS", "Hiragino Sans", "Yu Gothic", Arial, sans-serif;
       color: white;
       text-align: center;
       overflow: hidden;
@@ -19,38 +19,48 @@
       position: relative;
       top: 50%;
       transform: translateY(-50%);
-      padding: 20px;
+      padding: 20px 30px;
       animation: fadeIn 3s ease-in-out;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 42px;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
     }
 
     p {
-      font-size: 24px;
-      line-height: 1.6;
+      font-size: 26px;
+      line-height: 1.9;
+      margin-bottom: 20px;
     }
 
     img {
-      width: 360px;
-      margin-top: 60px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 380px;
+      margin-top: 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
       animation: zoomIn 10s ease-in-out;
     }
 
+    .from {
+      margin-top: 18px;
+      font-size: 22px;
+      font-style: italic;
+      opacity: 0.95;
+      letter-spacing: 1px;
+    }
+
     .tap {
-      margin-top: 35px;
-      font-size: 24px;
-      opacity: 0.9;
+      margin-top: 40px;
+      font-size: 22px;
+      opacity: 0.85;
       animation: blink 5s infinite;
     }
 
     .heart {
       position: absolute;
-      font-size: 35px;
+      font-size: 36px;
       animation: floatUp linear infinite;
       opacity: 0.8;
     }
@@ -89,13 +99,22 @@
     <p>
       会えなくても、<br>
       気持ちはいつも君のそばにいる。<br><br>
-      2026年も一緒にいよ。
-日本行くまで待ってて。
-ふたりで全部叶えよ。
-来年は、君のために本気で、全力で頑張るから。<br>
+
+      2026年も一緒にいよ。<br>
+      日本行くまで待ってて。<br>
+      ふたりで全部叶えよ。<br><br>
+
+      来年は、<br>
+      君のために本気で、<br>
+      全力で頑張るから。
     </p>
 
-    <img src="photo.JPH" alt="memory">
+    <img src="photo.JPG" alt="memory">
+
+    <!-- TULISAN DI BAWAH POSTER -->
+    <div class="from">
+      えむより、愛をこめて。
+    </div>
 
     <div class="tap">
       画面を一回タップしてね
