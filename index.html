@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>肥塚美空🤍</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 240px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: zoomIn 3s ease-in-out;
+    }
+
+    .tap {
+      margin-top: 25px;
+      font-size: 14px;
+      opacity: 0.9;
+      animation: blink 2s infinite;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <audio id="bgm" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>大好きだよ</h1>
+
+    <p>
+      会えなくても、<br>
+      気持ちはいつも君のそばにいる。<br><br>
+      2026年も一緒にいよ。
+日本行くまで待ってて。
+ふたりで全部叶えよ。
+来年は、君のために本気で、全力で頑張るから。<br>
+    </p>
+
+    <img src="photo.jpg" alt="memory">
+
+    <div class="tap">
+      画面を一回タップしてね
+    </div>
+  </div>
+
+  <script>
+    // Play music after first tap
+    document.body.addEventListener("click", function () {
+      document.getElementById("bgm").play();
+    }, { once: true });
+
+    // Create floating hearts
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
