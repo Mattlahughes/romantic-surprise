@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>肥塚美空🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background:
+        linear-gradient(
+          rgba(255,118,140,0.35),
+          rgba(255,126,179,0.35)
+        ),
+        url("background.jpeg") no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Trebuchet MS", "Hiragino Sans", "Yu Gothic", Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 20px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 22px;
+      letter-spacing: 2px;
+      display: none;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      display: none;
+      animation: fadeIn 2.5s ease forwards;
+    }
+
+    img {
+      width: 360px;
+      max-width: 90%;
+      margin: 10px auto 10px; /* FOTO DI TENGAH & DI ATAS TEKS */
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+      display: none;
+      animation: zoomIn 2.5s ease forwards;
+    }
+
+    .from {
+      margin-top: 6px;
+      font-size: 22px;
+      font-style: italic;
+      opacity: 0.95;
+      letter-spacing: 1px;
+      display: none;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .tap {
+      margin-top: 34px;
+      font-size: 26px;
+      opacity: 0.9;
+      animation: blink 4s infinite;
+    }
+
+    .heart {
+      position: absolute;
+      color: white;
+      animation: floatUp linear infinite;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.75); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(120vh); }
+      to { transform: translateY(-20vh); }
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MUSIC -->
+  <audio id="bgm" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+
+    <!-- TAP 1 -->
+    <h1 id="title">💓大好きだよ💓</h1>
+
+    <p id="message">
+      会えなくても、<br>
+      気持ちはいつもみくちゃんのそばにいる。<br><br>
+
+      2026年も一緒にいよ。<br>
+      日本に行くまで待ってて。<br>
+      ふたりで全部叶えよう。<br><br>
+
+      来年は、<br>
+      みくちゃんのために本気で、<br>
+      全力で頑張るから。
+    </p>
+
+    <!-- TAP 2 -->
+    <img id="photo" src="photo.JPG" alt="memory">
+
+    <div id="from" class="from">
+      えむより、愛をこめて。
+      今年一年、本当にありがとう。🤍🫂
+    </div>
+
+    <div id="tapText" class="tap">
+      ゆっくりタップしてね⭕️
+    </div>
+  </div>
+
+  <script>
+    let step = 0;
+
+    document.body.addEventListener("click", function () {
+      step++;
+
+      // TAP 1: KATA-KATA
+      if (step === 1) {
+        title.style.display = "block";
+        message.style.display = "block";
+        tapText.innerText = "もう一回タップしてね";
+      }
+
+      // TAP 2: FOTO + TEKS えむ
+      if (step === 2) {
+        title.style.display = "none";
+        message.style.display = "none";
+        photo.style.display = "block";
+        from.style.display = "block";
+        tapText.innerText = "最後にもう一回…";
+      }
+
+      // TAP 3: MUSIK + LOVE PUTIH
+      if (step === 3) {
+        tapText.style.display = "none";
+
+        const music = document.getElementById("bgm");
+        music.volume = 0.7;
+        music.play();
+
+        for (let i = 0; i < 32; i++) {
+          let heart = document.createElement("div");
+          heart.className = "heart";
+          heart.innerHTML = "🤍";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+          heart.style.fontSize = (Math.random() * 18 + 44) + "px";
+          document.body.appendChild(heart);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
